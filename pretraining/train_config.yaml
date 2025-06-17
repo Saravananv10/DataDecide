@@ -1,0 +1,22 @@
+# Example training configuration for OLMo models
+# Customize dataset path and other parameters as needed
+
+dataset: path/to/my_dataset
+model_size: 20M
+output_dir: ./olmo_ckpt
+max_steps: 1000
+batch_size: 64
+lr: 8.4e-3
+block_size: 2048
+grad_accum_steps: 1
+eval_tasks:
+  - mmlu
+  - hellaswag
+  - arc_challenge
+  - arc_easy
+  - piqa
+  - commonsenseqa
+  - social_iqa
+  - openbookqa
+  - boolq
+  - winogrande
