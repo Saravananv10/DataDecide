@@ -35,4 +35,14 @@ Now we generate a script with launch commands for all our experiments:
 python create_ladder_over_scale_script.py --scales eval-for-consistent-ranking-scales.txt --data-mixes eval-for-consistent-ranking-mix-names.jsonl --length 5xC --seeds <seeds> > my_experiments.sh
 ```
 
-Use this script from the root of your OLMo repo to launch all the experiments
+Use this script from the root of your OLMo repo to launch all the experiments.
+
+### Simple training example
+
+For quick experiments you can run our lightweight training script with a YAML configuration:
+
+```bash
+python train_simple_olmo.py --config train_config.yaml
+```
+
+`train_simple_olmo.py` initializes an `OLMoConfig` with `embedding_size` set to the selected model's hidden dimension so the model parameters are well-defined.  Edit `train_config.yaml` to reference your dataset and desired parameters.  If `eval_tasks` are provided, the script evaluates the resulting checkpoint on those lm_eval tasks.
